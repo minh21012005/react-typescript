@@ -33,6 +33,10 @@ const Todolist = () => {
         setListTodo([...listTodo, value])
     }
 
+    const deleteTodo = (value: number) => {
+        setListTodo(listTodo.filter(item => item.id !== value));
+    }
+
     return (
         <div style={{
             width: "600px",
@@ -50,6 +54,7 @@ const Todolist = () => {
             <TodoData
                 todos={listTodo}
                 owner={'minhnb'}
+                deleteTodo={deleteTodo}
             // age={20}
             // isDeveloper={true}
             />

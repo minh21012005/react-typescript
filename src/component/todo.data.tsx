@@ -7,10 +7,11 @@ interface IProps {
     owner?: string;
     age?: number;
     isDeveloper?: boolean;
+    deleteTodo: (value: number) => void;
 }
 
 const TodoData = (props: IProps) => {
-    const { todos, owner = 'unknow' } = props;
+    const { todos, owner = 'unknow', deleteTodo } = props;
     return (
         <div>
             {todos.map(item => {
@@ -19,7 +20,7 @@ const TodoData = (props: IProps) => {
                         <div style={{ padding: "10px 0" }}>
                             {item.id} - {item.title}
                             &nbsp;&nbsp;&nbsp;
-                            <button>Delete</button>
+                            <button onClick={() => { deleteTodo(item.id) }}>Delete</button>
                         </div>
                     </div>
                 )
