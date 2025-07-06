@@ -1,4 +1,5 @@
 import TodoData from "./todo.data";
+import TodoInput from "./todo.input";
 
 
 const Todolist = () => {
@@ -21,16 +22,24 @@ const Todolist = () => {
     ]
 
     return (
-        <>
+        <div style={{
+            width: "600px",
+            margin: "50px auto",
+            border: "1px solid #ccc",
+            borderRadius: 10,
+            padding: 10
+        }}>
             <div>My todo list</div>
+            <hr />
             <br />
+            <TodoInput name="your todo" />
             <TodoData
                 todos={todos}
                 owner={'minhnb'}
-                age={20}
-                isDeveloper={true}
+            // age={20}
+            // isDeveloper={true}
             />
-        </>
+        </div>
     )
 }
 

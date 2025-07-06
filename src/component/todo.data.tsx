@@ -4,27 +4,16 @@ interface IProps {
         title: string;
         isComplete: boolean;
     }[];
-    owner: string;
-    age: number;
-    isDeveloper: boolean;
+    owner?: string;
+    age?: number;
+    isDeveloper?: boolean;
 }
 
-type TProps = {
-    todos: {
-        id: number;
-        title: string;
-        isComplete: boolean;
-    }[];
-    owner: string;
-    age: number;
-    isDeveloper: boolean;
-}
-
-const TodoData = (props: TProps) => {
-    const { todos } = props;
+const TodoData = (props: IProps) => {
+    const { todos, owner = 'unknow' } = props;
     return (
         <div>
-            <div>owner : {props.owner}</div>
+            <div>owner : {owner}</div>
             {todos.map(item => {
                 return (
                     <div key={item.id}>
