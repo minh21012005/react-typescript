@@ -13,11 +13,14 @@ const TodoData = (props: IProps) => {
     const { todos, owner = 'unknow' } = props;
     return (
         <div>
-            <div>owner : {owner}</div>
             {todos.map(item => {
                 return (
                     <div key={item.id}>
-                        {item.title}
+                        <div style={{ padding: "10px 0" }}>
+                            {item.id} - {item.title}
+                            &nbsp;&nbsp;&nbsp;
+                            <button>Delete</button>
+                        </div>
                     </div>
                 )
             })}
